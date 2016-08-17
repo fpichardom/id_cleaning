@@ -1,0 +1,5 @@
+These should be the three resulting sets. Each refers to an individual.
+
+luna, mar,agua, 7890, mino
+nano, peco, palo, turo, 2301
+muno, 4456, lalo, pena, sol
