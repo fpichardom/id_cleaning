@@ -1,4 +1,4 @@
-#!python3
+#!usr/bin/python3
 # -*- coding: utf-8 -*-
 """
 Created on Tue Aug 16 19:36:03 2016
@@ -9,10 +9,12 @@ Created on Tue Aug 16 19:36:03 2016
 import csv
 import re
 with open('code.csv','r') as file:
-    reader= csv.reader(file)
-    codelist= [i[0].strip() for i in reader]
-    cleancode = [re.findall('[^+/\s]+', i) for i in codelist]
-    cleanname = set([item for sublist in cleancode for item in sublist])
+    reader = csv.reader(file)
+    busca = re.compile('[^+/\s]+')
+    cleancode = [busca.findall(i[0].strip()) for i in reader]
+    cleanname = [sub[0] for sub in cleancode]
+    #optional to have every name in list
+    #cleanname = set([item for sublist in cleancode for item in sublist])
     dicod={}
     for i in cleanname:
         dicod[i]= set()
