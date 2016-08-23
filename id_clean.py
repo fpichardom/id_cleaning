@@ -10,8 +10,8 @@ import csv
 import re
 with open('code.csv','r') as file:
     reader = csv.reader(file)
-    busca = re.compile('[^+/\s]+')
-    cleancode = [busca.findall(i[0].strip()) for i in reader]
+    busca = re.compile('[^+\s]+')
+    cleancode = [busca.findall(i[0].strip().upper()) for i in reader]
     cleanname = [sub[0] for sub in cleancode]
     #optional to have every name in list
     #cleanname = set([item for sublist in cleancode for item in sublist])
